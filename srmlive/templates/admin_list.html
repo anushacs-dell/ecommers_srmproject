@@ -1,0 +1,30 @@
+{% extends "common.html" %}
+{% block title %}list{% endblock title %}
+{% block section %}
+<div style="padding-inline: 3em;">
+    <h4>Admin List:</h4>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Username</th>
+                <th>Email</th>
+                <th>Password</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in admins_list %}
+            <tr>
+                <td>{{ i.username }}</td>
+                <td>{{ i.email }}</td>
+                <td>{{ i.password }}</td>
+                <td>
+                <a href="{% url "delete" i.id%}"><button type="submit" class="btn btn-danger">Delete</button></a>
+                </td> 
+            </tr>
+           
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock section %}

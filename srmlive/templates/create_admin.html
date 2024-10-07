@@ -1,0 +1,25 @@
+{% extends "common.html" %}
+{% block title %}create{% endblock title %}
+{% block section %}
+<div>
+    <h3 class='header2'>Create Admin</h3>
+        <div class='form1'>
+            <form method=post>
+                {% csrf_token %}
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">UserName</label>
+                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter username" name='username'>
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Email Address</label>
+                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Enter username" name='email'>
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Password</label>
+                <input type="Password" class="form-control" id="exampleFormControlInput1" placeholder="Enter password" name='password'>
+            </div>
+            <button type="submit" class="btn btn-success">Submit</button>
+            </form>
+        </div>
+</div>
+{% endblock section %}
